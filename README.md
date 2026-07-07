@@ -1,6 +1,6 @@
 # Skyhelm — Homebrew tap & installer
 
-**Voice-first command center for AI coding agents** (Claude Code, Codex). Supervise, approve and steer your agents from your phone — on your Wi-Fi, or anywhere via the end-to-end-encrypted relay. → https://skyhelm.dev
+**Command center for AI coding agents** (Claude Code, Codex). Supervise, approve and steer your agents from your phone — on your Wi-Fi, or anywhere via the end-to-end-encrypted relay. → https://skyhelm.dev
 
 This repo is the public **distribution channel**: a Homebrew formula + a one-line installer that fetch a prebuilt, source-free release. The Skyhelm source lives in a private repo.
 
@@ -27,7 +27,7 @@ skyhelm setup
 - **A coding agent:** [Claude Code](https://docs.claude.com/claude-code) (`claude`) or [Codex](https://github.com/openai/codex) (`codex`)
 - `tmux` (installed automatically) · **no Docker, no database server** (embedded PGlite)
 
-Voice speech-to-text and local memory (≈2 GB of models: whisper + ollama) are **optional** and off by default — add them anytime with `skyhelm setup` or `CATO_WITH_MODELS=1`.
+Local memory (semantic search) is **optional** — add it anytime with `skyhelm setup`.
 
 ## Update / uninstall
 ```sh

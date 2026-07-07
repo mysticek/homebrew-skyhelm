@@ -1,4 +1,4 @@
-# Homebrew formula for Skyhelm — voice-first command center for AI coding agents.
+# Homebrew formula for Skyhelm — command center for AI coding agents.
 #
 # Ships a prebuilt, source-free tarball (the source repo is private). Brew fetches the tarball,
 # installs production node_modules with `npm ci --omit=dev`, and exposes the `skyhelm` CLI. The big
@@ -8,7 +8,7 @@
 #   brew tap mysticek/skyhelm
 #   brew install skyhelm
 class Skyhelm < Formula
-  desc "Voice-first command center for AI coding agents (Claude Code, Codex)"
+  desc "Command center for AI coding agents (Claude Code, Codex)"
   homepage "https://skyhelm.dev"
   url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v0.1.1/skyhelm.tar.gz"
   sha256 "c66ea09ac3d3b7227aeffa7feffbce53d2193388e90571346b9403a2a1dad56d"
@@ -34,13 +34,12 @@ class Skyhelm < Formula
 
   def caveats
     <<~EOS
-      Finish setup (interactive) — choose a workspace, download voice/memory models, pair your phone:
+      Finish setup (interactive) — choose a workspace and pair your phone:
         skyhelm setup
 
-      Voice speech-to-text and local memory embeddings need extra tools:
-        brew install whisper-cpp ollama
+      Local memory (semantic search) is optional and needs Ollama:
+        brew install ollama
 
-      `skyhelm setup` downloads the models (~2GB: whisper large-v3-turbo + ollama bge-m3, gemma3:4b).
       No Docker and no database server — Skyhelm's database is embedded (PGlite).
     EOS
   end

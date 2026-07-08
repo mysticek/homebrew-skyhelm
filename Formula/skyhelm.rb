@@ -10,10 +10,10 @@
 class Skyhelm < Formula
   desc "Command center for AI coding agents (Claude Code, Codex)"
   homepage "https://skyhelm.dev"
-  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v0.1.3/skyhelm.tar.gz"
-  sha256 "93ed57b28ad33ce642ce9e4e2a2e19315886f3dad52e492fc0e12f9b7f82d265"
+  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v0.1.4/skyhelm.tar.gz"
+  sha256 "8d89c8d7bc0d1a7c90736205d13cc5e635eac92251266655eb38b07101c2b09b"
   license :cannot_represent # proprietary — desktop agent ships as compiled JS, source is private
-  version "0.1.3"
+  version "0.1.4"
 
   depends_on "node"
   depends_on "tmux"
@@ -45,6 +45,6 @@ class Skyhelm < Formula
   end
 
   test do
-    assert_match "0.1.3", shell_output("#{bin}/skyhelm --version")
+    assert_match "0.1.4", shell_output("#{bin}/skyhelm --version")
   end
 end

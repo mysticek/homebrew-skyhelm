@@ -10,10 +10,10 @@
 class Skyhelm < Formula
   desc "Command center for AI coding agents (Claude Code, Codex)"
   homepage "https://skyhelm.dev"
-  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v0.1.13/skyhelm.tar.gz"
-  sha256 "ffe13a6a5d3656aec94b8ba14c9e37d8a6c1f68f4d86b1619cdc0ee96f6fe149"
+  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v0.1.14/skyhelm.tar.gz"
+  sha256 "f958cd9c841d4cf5345f42aa85026c3a0bc903e4438d84d21f8f8c37dcae0f35"
   license :cannot_represent # proprietary — desktop agent ships as compiled JS, source is private
-  version "0.1.13"
+  version "0.1.14"
 
   depends_on "node"
   depends_on "tmux"

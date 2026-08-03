@@ -7,7 +7,9 @@ cask "skyhelm" do
   desc "Command your AI coding agents from your phone"
   homepage "https://skyhelm.dev"
 
-  depends_on macos: ">= :ventura"
+  #  already means "that version or newer" for a cask. The ">= :ventura" string form
+  # means the same thing and is deprecated, which brew says out loud to anyone who runs 158 kegs, 242,396 files, 13.4GB.
+  depends_on macos: :ventura
 
   app "Skyhelm.app"
 

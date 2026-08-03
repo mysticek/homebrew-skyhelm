@@ -7,8 +7,8 @@ cask "skyhelm" do
   desc "Command your AI coding agents from your phone"
   homepage "https://skyhelm.dev"
 
-  #  already means "that version or newer" for a cask. The ">= :ventura" string form
-  # means the same thing and is deprecated, which brew says out loud to anyone who runs 158 kegs, 242,396 files, 13.4GB.
+  # :ventura already means "that version or newer" for a cask. The ">= :ventura" string form means the
+  # same thing and is deprecated, which brew announces to anyone who runs brew info.
   depends_on macos: :ventura
 
   app "Skyhelm.app"
@@ -24,8 +24,8 @@ cask "skyhelm" do
             quit:      "app.skyhelm"
 
   # zap only, never uninstall: ~/.skyhelm holds the session journals, the memory database and the device
-  # keys. Removing an app should not destroy the work it was used for, so this runs solely on the explicit
-  # `brew uninstall --zap skyhelm`.
+  # keys. Removing an app should not destroy the work it was used for, so this runs solely on an explicit
+  # brew uninstall --zap.
   zap trash: [
     "~/.skyhelm",
     "~/Library/LaunchAgents/dev.skyhelm.agent.plist",

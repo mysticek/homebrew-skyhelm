@@ -16,7 +16,7 @@ cask "skyhelm" do
   version "0.3.0"
   sha256 "1bf6c252b4ff461dac8a17e68f2310a94545f9704e69f9e9e56c90e3881a27f9"
 
-  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v#{version}/Skyhelm.app.zip"
+  url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v#{version}/Skyhelm.zip"
   name "Skyhelm"
   desc "Command center for AI coding agents (Claude Code, Codex)"
   homepage "https://skyhelm.dev"

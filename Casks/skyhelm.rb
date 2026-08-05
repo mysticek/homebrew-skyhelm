@@ -13,8 +13,8 @@
 #   brew tap mysticek/skyhelm
 #   brew install --cask skyhelm
 cask "skyhelm" do
-  version "0.3.0"
-  sha256 "8830651b67173f7db87b4922fbec3e5293face0adafcbca574c481ccbb579564"
+  version "0.3.1"
+  sha256 "335c8477834097b5c5cddd1ae160dc1dfdd5c06cd77ddec86ccbe8c3b66d4fc8"
 
   url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v#{version}/Skyhelm.zip"
   name "Skyhelm"
@@ -37,8 +37,15 @@ cask "skyhelm" do
   postflight do
     # Point the LaunchAgent at the bundle and start it. Skyhelm is an always-on watcher: an install
     # that doesn't run until you remember to open something isn't the product.
-    system_command "#{appdir}/Skyhelm.app/Contents/Resources/agent/bin/skyhelm-daemon.sh",
-                   args: ["on"],
+    # Through bash, with a PATH: brew runs postflight commands with a minimal environment, and the
+    # script needs `node` (Homebrew's, or the bundle's) to read the config it arms launchd with.
+    # Invoked directly it exits non-zero, and because a postflight may not fail an install it does so
+    # in silence — which is exactly how a machine ends up with the app installed and no agent behind
+    # it. Verified: the same command by hand, with a PATH, arms all three jobs.
+    system_command "/bin/bash",
+                   args: ["-lc",
+                          "PATH=/opt/homebrew/bin:/usr/local/bin:$PATH " \
+                          "bash '#{appdir}/Skyhelm.app/Contents/Resources/agent/bin/skyhelm-daemon.sh' on"],
                    must_succeed: false
     # …and bring the menu bar back. On an UPGRADE brew runs the old cask's uninstall stanza first,
     # which quits the app — without this the icon simply vanishes until the next login, and the user

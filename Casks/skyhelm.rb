@@ -13,8 +13,8 @@
 #   brew tap mysticek/skyhelm
 #   brew install --cask skyhelm
 cask "skyhelm" do
-  version "0.3.1"
-  sha256 "335c8477834097b5c5cddd1ae160dc1dfdd5c06cd77ddec86ccbe8c3b66d4fc8"
+  version "0.3.2"
+  sha256 "77639080bdc2b8a64d92a3ef027448f9b7b82f30c4fcb18a384749568a184f87"
 
   url "https://github.com/mysticek/homebrew-skyhelm/releases/download/v#{version}/Skyhelm.zip"
   name "Skyhelm"
